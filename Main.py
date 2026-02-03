@@ -4,38 +4,76 @@ import random
 -1 for Water
 0 for Gun
  """
-computer = random.choice([-1, 0, 1])
-youstr = input("Enter your choice:")
-youDict = {"s": 1, "w": -1, "g":0}
-reverseDict = {1:"Snake", -1:"Water", 0:"Gun"}
 
-you = youDict[youstr]
+Computer_score = 0
+Your_score = 0
 
-# By now we have 2 numbers(variables): You and Computer
+for i in range (5):
+    computer = random.choice([-1, 0, 1])
+    youstr = input("Enter your choice:")
+    youDict = {"s": 1, "w": -1, "g":0}
+    reverseDict = {1:"Snake", -1:"Water", 0:"Gun"}
+    if youstr not in youDict:
+        print("Invalid Choice")
 
-print(f"You chose {reverseDict[you]} \nComputer chose {reverseDict[computer]}")
-
-if(computer == you):
-    print("Its a draw")
-
-else:
-    if(computer == -1 and you == 1):
-        print("You win!")
-
-    elif(computer == -1 and you == 0):
-        print("You Lose!")
-
-    elif(computer == 1 and you == -1):
-        print("You Lose!")
-
-    elif(computer == 1 and you == 0):
-         print("You Win!")
-
-    elif(computer == 0 and you == -1):
-        print("You Win!")
+    you = youDict[youstr]
     
-    elif(computer == 0 and you == 1):
-        print("You Lose!")
+    if(computer == you):
+        print("Its a draw")
+        
+    else:
+        if(computer == -1 and you == 1):
+            print("You win!")
+            Your_score += 1
+            
+        elif(computer == -1 and you == 0):
+            print("You Lose!")
+            Computer_score += 1
+            
+        elif(computer == 1 and you == -1):
+            print("You Lose!")
+            Computer_score += 1
+            
+        elif(computer == 1 and you == 0):
+            print("You Win!")
+            Your_score += 1
+            
+        elif(computer == 0 and you == -1):
+            print("You Win!")
+            Your_score += 1
+            
+        elif(computer == 0 and you == 1):
+            print("You Lose!")
+            Computer_score += 1
+            
+    print(f"You chose {reverseDict[you]} \nComputer chose {reverseDict[computer]}\n")
+            
+def final_winner():
+    if (Computer_score == Your_score):
+        print("There is no final winner")
+    
+    else:
+        if(Computer_score > Your_score):
+            print("The final winner is the Computer:",Computer_score)
+
+        else:
+            print("The final winner is you:",Your_score)
+
+final_winner()
+
+with open ("Scores.txt", "w") as f:
+    f.write("Snake Water Gun Game final Scores\n")
+    f.write("-----------------------------------------\n")
+    f.write(f"Computer Scores are:{Computer_score}\n")
+    f.write(f"Your Scores are:{Your_score}\n")
+
+    if (Computer_score == Your_score):
+        f.write("Match is draw")
+
+    elif(Computer_score > Your_score):
+        f.write("Computer wins")
 
     else:
-        print("Something went wrong")
+        f.write("You win")
+
+    

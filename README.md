@@ -1,34 +1,66 @@
 # Snake Water Gun Game (Python)
 
-This repository contains a Python implementation of the classic Snake Water Gun game.
+This is a simple **Snake Water Gun** game implemented in Python.
 
-The project was built earlier while learning Python through the *Code With Harry* YouTube tutorials.
-I am now sharing it publicly as part of documenting my learning journey.
+I initially built this project while learning from the *Code With Harry* YouTube tutorial.  
+Later, I revisited the same project to understand the logic more deeply and experiment with improvements and variations.
 
-## 📌 About the Project
+This repository reflects that learning process.
+
+---
+
+## About the Project
+
 The game allows a user to play Snake Water Gun against the computer.
-The computer’s choice is generated randomly, and the winner is decided using conditional logic.
 
-## 📂 Project Versions
-This repository includes *two implementations* of the same game:
+To understand the logic better, I implemented the same game in **two different ways**:
 
-1. *Short Logic Version*
-   - Uses compact conditional expressions to determine the result
+- **Short version** – uses compact conditions and minimal code
+- **Long version** – uses clear `if-elif` statements for better readability
 
-2. *Long Readable Version*
-   - Uses clear and detailed if-elif statements for better understanding
+Writing both versions helped me compare:
+- brevity vs clarity
+- how the same problem can be solved in different ways
+- why readable code matters when revisiting old projects
 
-Both versions produce the same output and exist for learning and comparison purposes.
+---
 
-## 🧠 What I Learned
-- How the same logic can be written in different ways
-- Trade-offs between concise and readable code
-- Better understanding of conditional statements
-- Using dictionaries to map user input
-- Applying Python’s random module
-- Revisiting and understanding previously written code
+## What I Learned
+
+While modifying this project beyond the tutorial, I encountered and fixed several issues:
+
+- Placing user input outside loops caused repeated choices
+- Generating random computer choices only once led to incorrect gameplay
+- Using functions without proper parameters caused scope-related bugs
+- Modifying global variables inside functions made the logic harder to reason about
+- Missing input validation caused crashes for unexpected inputs
+
+These mistakes helped me understand **program flow, scope, and design decisions** better than simply following a tutorial.
+
+---
+
+## Why This Project Exists
+
+This project is not meant to showcase advanced Python skills.
+
+It exists to:
+- document my learning process
+- practice improving and refactoring existing code
+- build the habit of understanding *why* code works (or breaks)
+
+---
+
+## How to Run
+
+1. Make sure Python is installed
+2. Clone the repository
+3. Run the Python file using:
+   ```bash
+   python filename.py
 
 
-## 🙏 Credits
-Tutorial reference: *Code With Harry (YouTube)*  
-This project was built for learning and practice purposes
+## Notes
+I plan to revisit this project again to:
+refactor the logic using proper functions
+improve structure and data flow
+handle input validation more cleanly
