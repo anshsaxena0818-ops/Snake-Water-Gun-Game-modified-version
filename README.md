@@ -2,7 +2,7 @@
 
 This is a simple **Snake Water Gun** game implemented in Python.
 
-I initially built this project while learning from the *Code With Harry* YouTube tutorial.  
+I initially built this project while learning from the YouTube tutorial.  
 Later, I revisited the same project to understand the logic more deeply and experiment with improvements and variations.
 
 This repository reflects that learning process.

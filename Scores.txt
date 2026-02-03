@@ -1,5 +1,0 @@
-Snake Water Gun Game final Scores
------------------------------------------
-Computer Scores are:1
-Your Scores are:2
-You win
